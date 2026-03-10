@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Stock Tracker</title>
+    <style>
+      html {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100% !important;
+        background: #8e8ea8 !important;
+      }
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        min-height: 100% !important;
+        height: 100% !important;
+        background: #8e8ea8 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+      #root {
+        width: 390px;
+        height: 844px;
+        max-height: 100vh;
+        overflow: hidden;
+        border-radius: 40px;
+        box-shadow: 0 0 0 8px #111, 0 0 40px rgba(0,0,0,0.6);
+        position: relative;
+        flex-shrink: 0;
+      }
+      /* Notch */
+      #root::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 126px;
+        height: 28px;
+        background: #111;
+        border-radius: 0 0 18px 18px;
+        z-index: 99999;
+      }
+      @media (max-width: 430px) {
+        #root {
+          width: 100%;
+          height: 100vh;
+          border-radius: 0;
+          box-shadow: none;
+        }
+        #root::before {
+          display: none;
+        }
+        body {
+          background: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
